@@ -8,6 +8,10 @@ $(document).ready(function(){
 		$("#height-display").text($("#height-range").val());
 	});
 
+	$("#steps-range").on("input", function(){
+		$("#steps-display").text($("#steps-range").val());
+	});
+
 	$.fn.loading_start = function(){
 		$("#generate-button").prop("disabled", true);
 		//$("#generated-image").hide();
@@ -31,6 +35,7 @@ $(document).ready(function(){
 		data["width"] = $("#width-range").val();
 		data["height"] = $("#height-range").val();
 		data["text"] =  $("#input-text").val() || "2000 years later";
+		data["steps"] = $("#steps-range").val();
 		console.log(data);
 		$.fn.loading_start();
 		$.ajax({
@@ -47,5 +52,6 @@ $(document).ready(function(){
 
 	$("#width-display").text($("#width-range").val());
 	$("#height-display").text($("#height-range").val());
+	$("#steps-display").text($("#steps-range").val());
 
 })

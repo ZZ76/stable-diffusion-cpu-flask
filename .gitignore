@@ -153,4 +153,6 @@ cython_debug/
 
 outputs/txt2img-samples/samples/
 models/ldm/stable-diffusion-v1-4/sd-v1-4.ckpt
+models/ldm/stable-diffusion-v1/
+src/
 *.swp

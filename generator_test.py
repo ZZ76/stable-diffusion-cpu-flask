@@ -15,7 +15,7 @@ class generator:
         self.loaded = True
         print('Model loaded')
 
-    def generate(self, w, h, prompt):
+    def generate(self, w, h, prompt, steps):
         random_img = np.random.randint(256, size=(h, w, 3)).astype(np.uint8)
         time.sleep(3)
         return random_img

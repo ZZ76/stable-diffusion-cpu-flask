@@ -20,8 +20,9 @@ def generate_b64_image(np_img):
 def stable_diffusion():
     width = int(request.args.get('width'))
     height = int(request.args.get('height'))
+    steps = int(request.args.get('steps'))
     text = request.args.get('text')
     # image_b64 = test_image()
-    image_b64 = generate_b64_image(current_app.generator.generate(width, height, text))
-    response = jsonify({'width': width, 'height': height, 'text': text, 'image': image_b64})
+    image_b64 = generate_b64_image(current_app.generator.generate(width, height, text, steps))
+    response = jsonify({'width': width, 'height': height, 'text': text, 'steps':steps, 'image': image_b64})
     return response

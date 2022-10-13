@@ -77,10 +77,11 @@ class generator:
         self.loaded = True
         print('Model loaded')
 
-    def generate(self, w, h, prompt):
+    def generate(self, w, h, prompt, steps):
         self.W = w
         self.H = h
         self.prompt = prompt
+        self.ddim_steps = steps
         self.data = [self.batch_size * [prompt]]
         # print('width:{}\nheight:{}\ntext:{}'.format(self.W, self.H, self.prompt))
 
